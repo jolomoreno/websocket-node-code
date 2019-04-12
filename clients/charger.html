@@ -1,0 +1,46 @@
+<html>
+  <head>
+    <script src="socket.io.js"></script>
+    <script>
+      const socket = io('ws://localhost:3100/chargers/c1234');
+      const messageCharging = {
+        event: 'chargingStatus',
+        data: {
+          status: 'charging',
+        }
+      }
+      const messageCharging80 = {
+        event: 'chargingStatus',
+        data: {
+          status: 'charging80',
+        }
+      }
+      const messageCharged = {
+        event: 'chargingStatus',
+        data: {
+          status: 'charged',
+        }
+      }
+      socket.on('connect', function() {
+        console.log('Connected');
+      });
+
+      socket.emit('charger', messageCharging);
+      socket.emit('charger', messageCharging80);
+      socket.emit('charger', messageCharged);
+
+      socket.on('charger', function(message) {
+        console.log(message, '<<<<< WIDGET');
+        // document.getElementById("p1").innerHTML = message.data.status;
+      });
+
+      socket.on('disconnect', function() {
+        console.log('Disconnected');
+      });
+    </script>
+  </head>
+
+  <body>
+  <span>Status: </span><span id="p1"></span>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+{
+  "name": "wallbox-node-code",
+  "version": "1.0.0",
+  "description": "Nest TypeScript websockets project",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "start": "ts-node src/main.ts",
+    "prestart:prod": "npm run build",
+    "start:prod": "node dist/main.js"
+  },
+  "dependencies": {
+    "@nestjs/common": "6.1.0",
+    "@nestjs/core": "6.1.0",
+    "@nestjs/platform-express": "6.1.0",
+    "@nestjs/platform-socket.io": "6.1.0",
+    "@nestjs/testing": "6.1.0",
+    "@nestjs/websockets": "6.1.0",
+    "class-transformer": "0.2.0",
+    "class-validator": "0.9.1",
+    "reflect-metadata": "0.1.13",
+    "rxjs": "6.4.0",
+    "typescript": "3.4.3"
+  },
+  "devDependencies": {
+    "@types/node": "7.10.5",
+    "@types/socket.io": "2.1.2",
+    "@types/ws": "6.0.1",
+    "ts-node": "8.0.3",
+    "tslint": "5.15.0"
+  }
+}
