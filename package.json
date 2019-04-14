@@ -1,5 +1,6 @@
 {
   "name": "wallbox-node-code",
+  "author": "Jose Lorenzo Moreno Moreno",
   "version": "1.0.0",
   "description": "Nest TypeScript websockets project",
   "license": "MIT",
