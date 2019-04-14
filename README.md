@@ -1,4 +1,6 @@
-# websocket-node-code - Jose Lorenzo Moreno Moreno
+# Websocket-node-code
+> - Jose Lorenzo Moreno Moreno
+> - github: https://github.com/jolomoreno/websocket-node-code
 
 ## Ejecución y pruebas 
 
