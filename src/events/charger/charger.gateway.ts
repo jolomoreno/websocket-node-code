@@ -16,6 +16,5 @@ export class ChargerGateway {
   async chargingStatus(client: Client, message: Message): Promise<void> {
     console.log(message, '<<<<<<<<< Message in charger');
     this.server.emit('charger', message);
-    this.server.emit('widget', message);
   }
 }

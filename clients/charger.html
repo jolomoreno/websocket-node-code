@@ -9,29 +9,16 @@
           status: 'charging',
         }
       }
-      const messageCharging80 = {
-        event: 'chargingStatus',
-        data: {
-          status: 'charging80',
-        }
-      }
-      const messageCharged = {
-        event: 'chargingStatus',
-        data: {
-          status: 'charged',
-        }
-      }
+
       socket.on('connect', function() {
         console.log('Connected');
       });
 
       socket.emit('charger', messageCharging);
-      socket.emit('charger', messageCharging80);
-      socket.emit('charger', messageCharged);
 
-      socket.on('charger', function(message) {
-        console.log(message, '<<<<< WIDGET');
-        // document.getElementById("p1").innerHTML = message.data.status;
+      socket.on('charger', (charger) => {
+        console.log(charger);
+        document.getElementById("p1").innerHTML = charger.data.status;
       });
 
       socket.on('disconnect', function() {
@@ -41,6 +28,6 @@
   </head>
 
   <body>
-  <span>Status: </span><span id="p1"></span>
+    <span>Status: </span><span id="p1"></span>
   </body>
 </html>

@@ -2,13 +2,18 @@
   <head>
     <script src="socket.io.js"></script>
     <script>
-      const socket = io('ws://localhost:3100/chargers/c1234');
+      const socket = io('ws://localhost:3200/widgets/wABCD');
       socket.on('connect', function() {
         console.log('Connected');
       });
+      socket.emit('widget');
 
-      socket.on('widget', (response) => {
-        console.log('WIDGET: Charging status->', response)
+      socket.on('widget', (widget) => {
+        console.log(widget);
+        document.getElementById('p1').innerHTML = widget.data.status;
+        if (widget.data.status === 'charging') {
+          document.getElementById('p1').style.color = 'red';
+        }
       });
 
       socket.on('disconnect', function() {
@@ -17,5 +22,7 @@
     </script>
   </head>
 
-  <body></body>
+  <body>
+    <span>Status: </span><span id="p1"></span>
+  </body>
 </html>
