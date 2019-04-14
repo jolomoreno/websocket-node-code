@@ -62,5 +62,3 @@ Los avisadores reciben por parte del servidor, mensajes exactamente iguales a lo
 * Se utiliza el framework NestJs con el lenguaje Typescript. El único requisito era que se utilizase [ws](https://github.com/websockets/ws/) 
 
 * Se han incluido dos **Test E2E** utilizando **Jest** para realizar sendas pruebas de conexión y comunicación entre un cliente y nuestro servidor.
-
-* Si quieres, añade notas explicando las decisiones más importantes que has tomado.
