@@ -7,7 +7,9 @@
     "build": "tsc -p tsconfig.build.json",
     "start": "ts-node src/main.ts",
     "prestart:prod": "npm run build",
-    "start:prod": "node dist/main.js"
+    "start:prod": "node dist/main.js",
+    "test": "jest",
+    "test:coverage": "jest --coverage"
   },
   "dependencies": {
     "@nestjs/common": "6.1.0",
@@ -16,6 +18,7 @@
     "@nestjs/platform-socket.io": "6.1.0",
     "@nestjs/testing": "6.1.0",
     "@nestjs/websockets": "6.1.0",
+    "@types/jest": "^24.0.11",
     "class-transformer": "0.2.0",
     "class-validator": "0.9.1",
     "reflect-metadata": "0.1.13",
@@ -27,6 +30,22 @@
     "@types/socket.io": "2.1.2",
     "@types/ws": "6.0.1",
     "ts-node": "8.0.3",
-    "tslint": "5.15.0"
+    "tslint": "5.15.0",
+    "@types/jest": "^24.0.11",
+    "jest": "^19.0.2",
+    "ts-jest": "^19.0.14",
+    "typescript": "^2.2.1"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.tsx?$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "(/e2e/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "json"
+    ]
   }
 }
